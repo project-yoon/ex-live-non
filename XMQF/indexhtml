@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Test | Index | XMQF </title>
+    </head>
+    <body>
+        <h1>Test Index Page</h1>
+        <header>
+            <div>
+                <ul>
+                    <li><a href="javascript:void(0);">menu1</a></li>
+                    <li><a href="javascript:void(0);">menu2</a></li>
+                    <li><a href="javascript:void(0);">menu3</a></li>
+                    <li><a href="javascript:void(0);">menu4</a></li>
+                    <li><a href="javascript:void(0);">menu5</a></li>
+                </ul>
+            </div>
+            <div>
+                <button>util1</button>
+                <button>util2</button>
+                <button>util3</button>
+            </div>
+        </header>
+        <div class="wrap">
+            <div class="container">
+                <div class="contents">
+
+                    <div class="left">
+                       좌측 컨텐츠
+                    </div>
+                    <div class="right">
+                        우측 컨텐츠
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
