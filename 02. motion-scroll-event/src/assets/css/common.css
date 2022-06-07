@@ -1,8 +1,8 @@
 @charset "UTF-8";
 /* =====================================
-* HMS (Admin Portal) 2019
+* YYXXMM 2022
 * =====================================
-* 최초작성 : 2019.01.23
+* 최초작성 : 2022.06.10
 */
 /*     brand Colors              */
 .card {
@@ -9124,7 +9124,7 @@ select.selectpicker {
     .navbar .navbar-toggler .navbar-toggler-icon {
       width: 22px;
       height: 2px;
-      vertical-align: middle;
+      /* vertical-align: middle; */
       outline: 0;
       display: block;
       border-radius: 1px; }
@@ -9243,7 +9243,7 @@ select.selectpicker {
     border-radius: 10px;
     text-align: center;
     line-height: 19px;
-    vertical-align: middle;
+    /* vertical-align: middle; */
     display: block; }
 
 .navbar .navbar-minimize {
@@ -10593,7 +10593,7 @@ select.selectpicker {
   text-align: center; }
 
 .fixed-plugin .adjustments-line p {
-  float: left;
+  /* float: left; */
   display: inline-block;
   margin-bottom: 0;
   font-size: 1em;
@@ -12295,7 +12295,7 @@ select.selectpicker {
     vertical-align: middle;
     position: relative;
     top: -2px;
-    float: left;
+    /* float: left; */
     padding-right: 10px;
     display: inline-block; }
     .form-check .form-check-sign:before {
@@ -12335,7 +12335,13 @@ select.selectpicker {
         width: 0;
         color: #fff;
         height: 0;
-        box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0 inset;
+        box-shadow: 0 0 0 0,
+ 0 0 0 0,
+ 0 0 0 0,
+ 0 0 0 0,
+ 0 0 0 0,
+ 0 0 0 0,
+ 0 0 0 0 inset;
         animation: checkboxOff 0.3s forwards; }
   .form-check .form-check-input:focus + .form-check-sign .check:after {
     opacity: 0.2; }
@@ -12343,7 +12349,12 @@ select.selectpicker {
     background: #9c27b0; }
   .form-check .form-check-input:checked + .form-check-sign .check:before {
     color: #FFFFFF;
-    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px;
+    box-shadow: 0 0 0 10px,
+ 10px -10px 0 10px,
+ 32px 0 0 20px,
+ 0px 32px 0 20px,
+ -5px 5px 0 10px,
+ 20px -12px 0 11px;
     animation: checkboxOn 0.3s forwards; }
   .form-check .form-check-input:checked + .form-check-sign:before {
     animation: rippleOn 500ms; }
@@ -12371,11 +12382,26 @@ select.selectpicker {
 
 @keyframes checkboxOn {
   0% {
-    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 15px 2px 0 11px; }
+    box-shadow: 0 0 0 10px,
+ 10px -10px 0 10px,
+ 32px 0 0 20px,
+ 0px 32px 0 20px,
+ -5px 5px 0 10px,
+ 15px 2px 0 11px; }
   50% {
-    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px 2px 0 11px; }
+    box-shadow: 0 0 0 10px,
+ 10px -10px 0 10px,
+ 32px 0 0 20px,
+ 0px 32px 0 20px,
+ -5px 5px 0 10px,
+ 20px 2px 0 11px; }
   100% {
-    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px; } }
+    box-shadow: 0 0 0 10px,
+ 10px -10px 0 10px,
+ 32px 0 0 20px,
+ 0px 32px 0 20px,
+ -5px 5px 0 10px,
+ 20px -12px 0 11px; } }
 
 @keyframes rippleOn {
   0% {
@@ -14388,7 +14414,7 @@ form .checkbox-radios {
   vertical-align: middle;
   position: relative;
   top: -2px;
-  float: left;
+  /* float: left; */
   padding-right: 10px;
   display: inline-block; }
 
@@ -14424,11 +14450,26 @@ form .checkbox-radios {
 
 @keyframes checkboxOn {
   0% {
-    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 15px 2px 0 11px; }
+    box-shadow: 0 0 0 10px,
+ 10px -10px 0 10px,
+ 32px 0 0 20px,
+ 0px 32px 0 20px,
+ -5px 5px 0 10px,
+ 15px 2px 0 11px; }
   50% {
-    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px 2px 0 11px; }
+    box-shadow: 0 0 0 10px,
+ 10px -10px 0 10px,
+ 32px 0 0 20px,
+ 0px 32px 0 20px,
+ -5px 5px 0 10px,
+ 20px 2px 0 11px; }
   100% {
-    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px; } }
+    box-shadow: 0 0 0 10px,
+ 10px -10px 0 10px,
+ 32px 0 0 20px,
+ 0px 32px 0 20px,
+ -5px 5px 0 10px,
+ 20px -12px 0 11px; } }
 
 @keyframes rippleOn {
   0% {

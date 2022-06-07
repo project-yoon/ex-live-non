@@ -55,33 +55,6 @@
 .header {
   position: relative; }
 
-.header {
-  box-sizing: border-box;
-  border-bottom: 1px solid #dedede;
-  padding: 2rem 1rem;
-  text-align: center;
-
-  /*상단고정*/
-  position: fixed;
-  top: 0;
-  /* top: -5.9rem; */
-  left: 0;
-  right: 0;
-  height: 5.9rem;
-  background: transparent;
-  z-index: 2000;
-  transition: all .3s cubic-bezier(.215,.61,.355,1);
-}
-.header.in{
-  /* top:0; */
-  /* top: -5.9rem; */
-  padding: 0.5rem 1rem;
-  height: 2.5rem;
-}
-.header h1{font-size: 2rem;transition: all .3s cubic-bezier(.215,.61,.355,1);}
-.header.in h1{font-size:1rem;}
-.header.red h1{color: #f42400;}
-
 .content{
   width: 100%;
   min-height: 100%;
@@ -866,27 +839,7 @@ table {
   .header .tab_nav > ul li a {
     padding: 4px;
     font-size: 12px; } }
-/*footer*/
-.footer {
-  box-sizing: border-box;
-  border-top: 1px solid #dedede;
-  padding: 2rem 1rem;
 
-  /*하단고정*/
-  position: fixed;
-  bottom: -5.9rem;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 5.9rem;
-  background: #fff;
-  border-top: 1px solid #c2c2c2;
-  z-index: 2000;
-  transition: all .3s cubic-bezier(.215,.61,.355,1);
-}
-.footer.in {
-  bottom: -5.9rem;
-}
 /*FooterMenu*/
 .footMenu {
   z-index: 10001;
@@ -1092,6 +1045,60 @@ a:not([href]):not([tabindex]):hover, a:not([href]):not([tabindex]):focus {
 }
 a:not([href]):not([tabindex]):focus {
   outline: 0; 
+}
+
+.header {
+  box-sizing: border-box;
+  border-bottom: 1px solid #dedede;
+  padding: 2rem 1rem;
+  text-align: center;
+
+  /*상단고정*/
+  position: fixed;
+  top: 0;
+  /* top: -5.9rem; */
+  left: 0;
+  right: 0;
+  height: 5.9rem;
+  background: transparent;
+  z-index: 2000;
+  transition: all .3s cubic-bezier(.215,.61,.355,1);
+}
+.header.in{
+  /* top:0; */
+  /* top: -5.9rem; */
+  padding: 0.5rem 1rem;
+  height: 2.5rem;
+}
+.header h1{font-size: 2rem;transition: all .3s cubic-bezier(.215,.61,.355,1);}
+.header.in h1{font-size:1rem;}
+.header.red h1{color: #f42400;}
+
+/*footer*/
+.footer {
+  box-sizing: border-box;
+  border-top: 1px solid #dedede;
+  padding: 2rem 1rem;
+
+  /*하단고정*/
+  position: fixed;
+  bottom: -5.9rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 5.9rem;
+  background: #fff;
+  border-top: 1px solid #c2c2c2;
+  z-index: 2000;
+  transition: all .3s cubic-bezier(.215,.61,.355,1);
+}
+.footer.in {
+  /* bottom: -5.9rem; */
+  padding: 0.5rem 1rem;
+  height: 2.5rem;
+  font-size: 10px;
+  color: #f1f1f1;
+  background-color: #c2c2c2;
 }
 
 .cont-head {

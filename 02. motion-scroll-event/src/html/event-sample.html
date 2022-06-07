@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="kr">
 <head>
-<title>scroll motion : details page</title>
+<title>event sample : details page</title>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -40,7 +40,7 @@
                     - Content End -
                 </div>
             </div>
-            <div class="footer" id="footer">
+            <div class="footer">
                 <h2>FOOTER</h2>
             </div>
         </div>
@@ -50,26 +50,18 @@
 
     window.addEventListener('scroll', () => { 
         //스크롤을 할 때마다 로그로 현재 스크롤의 위치가 찍혀나온다.
-        console.log(window.scrollX, "scrollY : " + window.scrollY);
+        console.log(window.scrollX, window.scrollY);
 
         const headlimit = document.querySelector("#header").offsetHeight;
-        console.log("headerHeight : " + headlimit);
-        const allHeight = document.querySelector("#wrap").offsetHeight;
-        console.log('allHeight  : ' + allHeight);
+        console.log(headlimit);
 
         // EventHandler.on(window, "scroll", () => {
                 if (window.scrollY < headlimit / 2 ) {
                     document.querySelector("#header").classList.remove('in');
-                    document.querySelector("#footer").classList.remove('in');
                     startY = window.scrollY;
                     return;
                 } else {
                     document.querySelector("#header").classList.add('in');
-                    document.querySelector("#footer").classList.add('in');
-                }
-                if (window.scrollY > headlimit ) {
-                    console.log("end!");
-                    // document.querySelector("#footer").classList.remove('in');
                 }
             // });
     });
@@ -93,7 +85,6 @@
 
     // 함수 내용
     function headerInit() {
-        
         const headlimitz = document.querySelector("#header").offsetHeight;
         console.log('headlimitz : ' + headlimitz);
 
