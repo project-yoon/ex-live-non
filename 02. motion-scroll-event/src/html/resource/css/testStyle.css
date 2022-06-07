@@ -1062,6 +1062,7 @@ a:not([href]):not([tabindex]):focus {
   height: 5.9rem;
   background: transparent;
   z-index: 2000;
+  -webkit-transition: all .3s cubic-bezier(.215,.61,.355,1);
   transition: all .3s cubic-bezier(.215,.61,.355,1);
 }
 .header.in{
@@ -1070,7 +1071,7 @@ a:not([href]):not([tabindex]):focus {
   padding: 0.5rem 1rem;
   height: 2.5rem;
 }
-.header h1{font-size: 2rem;transition: all .3s cubic-bezier(.215,.61,.355,1);}
+.header h1{font-size: 2rem;-webkit-transition: all .3s cubic-bezier(.215,.61,.355,1);transition: all .3s cubic-bezier(.215,.61,.355,1);}
 .header.in h1{font-size:1rem;}
 .header.red h1{color: #f42400;}
 
