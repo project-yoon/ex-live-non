@@ -35,6 +35,7 @@
                     </section>
                     <section>Section-D</section>
                     <section>Section-E</section>
+                    <section>Section-F</section>
                 </div>
                 <div class="cont-foot">
                     - Content End -
@@ -48,30 +49,53 @@
 <script>
 //   location.href="./src/index.html";
 
+    
+    let ScrollTimer;
     window.addEventListener('scroll', () => { 
-        //스크롤을 할 때마다 로그로 현재 스크롤의 위치가 찍혀나온다.
-        console.log(window.scrollX, "scrollY : " + window.scrollY);
+        //스크롤을 할 때마다 이벤트 발생.
+        //디바운싱 시작
+        if (ScrollTimer) {
+            clearTimeout(ScrollTimer);
+        }
+        ScrollTimer = setTimeout(() => {
 
-        const headlimit = document.querySelector("#header").offsetHeight;
-        console.log("headerHeight : " + headlimit);
-        const allHeight = document.querySelector("#wrap").offsetHeight;
-        console.log('allHeight  : ' + allHeight);
+            console.log('[0] -------- 스크롤 현재상태 -----------');
+            const startY = window.scrollY;
+            console.log(window.scrollX, "scrollY : " + window.scrollY);
 
-        // EventHandler.on(window, "scroll", () => {
-                if (window.scrollY < headlimit / 2 ) {
-                    document.querySelector("#header").classList.remove('in');
-                    document.querySelector("#footer").classList.remove('in');
-                    startY = window.scrollY;
-                    return;
-                } else {
-                    document.querySelector("#header").classList.add('in');
-                    document.querySelector("#footer").classList.add('in');
-                }
-                if (window.scrollY > headlimit ) {
-                    console.log("end!");
-                    // document.querySelector("#footer").classList.remove('in');
-                }
+            console.log('[1] -------- 브라우저 높이 ------------');
+            console.log(document.documentElement.clientHeight);
+
+            console.log('[2] ------- 헤더(상단) 높이 -----------');
+            const headlimit = document.querySelector("#header").offsetHeight;
+            console.log("headerHeight : " + headlimit);
+            
+            console.log('[3] -------- 컨텐츠랩 높이 ------------');
+            const allHeight = document.querySelector("#wrap").offsetHeight;
+            const scrH = document.querySelector("#wrap").scrollHeight;
+            console.log('allHeight  : ' + allHeight);
+            console.log("scrH : " + scrH);
+
+            // EventHandler.on(window, "scroll", () => {
+                    if (startY < headlimit / 2 ) { 
+                        //  스크롤의 현재 값이 헤더높이의 절반 값보다 작다면,
+                        //  헤더,푸터 : 고정 해제
+                        document.querySelector("#header").classList.remove('in');
+                        document.querySelector("#footer").classList.remove('in');
+                        
+                        return;
+                    } else if (startY >= scrH - document.documentElement.clientHeight ){
+                        //  스크롤의 현재 값이 컨텐츠 높이에서 브라우저 높이를 뺀 값과 같다면, (최하단은 브라우저 높이를 뺀 값보다 작을 수 없다.)
+                        //  푸터 : 고정
+                        console.log('foot!');
+                        document.querySelector("#footer").classList.remove('in');
+                    } else {
+                        document.querySelector("#header").classList.add('in');
+                        document.querySelector("#footer").classList.add('in');
+                    }
             // });
+        }, 0);
+
     });
 
 
