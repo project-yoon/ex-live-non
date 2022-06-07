@@ -84,7 +84,7 @@
                         document.querySelector("#footer").classList.remove('in');
                         
                         return;
-                    } else if (startY >= scrH - document.documentElement.clientHeight ){
+                    } else if (startY == scrH - document.documentElement.clientHeight ){
                         //  스크롤의 현재 값이 컨텐츠 높이에서 브라우저 높이를 뺀 값과 같다면, (최하단은 브라우저 높이를 뺀 값보다 작을 수 없다.)
                         //  푸터 : 고정
                         console.log('foot!');
