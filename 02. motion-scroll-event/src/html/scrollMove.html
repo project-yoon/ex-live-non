@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="kr">
+<head>
+<title>scroll motion : event test</title>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<link rel="stylesheet" href="./resource/css/testStyle.css" />
+</head>
+<body>
+    <div class="wrap" id="wrap">
+        <div class="container">
+            <div class="header" id="header">
+                <h1>HEADER</h1>
+            </div>
+            <div class="content">
+                <div class="cont-head">
+                    <h2>Content Now!</h2>
+                    <div class="tab">
+                        <ul>
+                            <li><a href="javascript:void(0);">Tab-A</a></li>
+                            <li><a href="javascript:void(0);">Tab-B</a></li>
+                            <li><a href="javascript:void(0);">Tab-C</a></li>
+                            <li><a href="javascript:void(0);">Tab-D</a></li>
+                            <li><a href="javascript:void(0);">Tab-E</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="cont-body">
+                    <section>Section-A</section>
+                    <section>Section-B</section>
+                    <section>
+                        Section-C
+                        <img src="https://t1.daumcdn.net/tistory_admin/blog/admin/profile_default_03.png" class="avatar" alt="">
+                    </section>
+                    <section>Section-D</section>
+                    <section>Section-E</section>
+                </div>
+                <div class="cont-foot">
+                    - Content End -
+                </div>
+            </div>
+            <div class="footer">
+                <h2>FOOTER</h2>
+            </div>
+        </div>
+    </div>
+<script>
+//   location.href="./src/index.html";
+
+    window.addEventListener('scroll', () => { 
+        //스크롤을 할 때마다 로그로 현재 스크롤의 위치가 찍혀나온다.
+        console.log(window.scrollX, window.scrollY);
+
+        const headlimit = document.querySelector("#header").offsetHeight;
+        console.log(headlimit);
+
+        // EventHandler.on(window, "scroll", () => {
+                if (window.scrollY < headlimit / 2 ) {
+                    document.querySelector("#header").classList.remove('in');
+                    startY = window.scrollY;
+                    return;
+                } else {
+                    document.querySelector("#header").classList.add('in');
+                }
+            // });
+    });
+
+
+
+    // ********************************************************************
+
+    // 준비 : Basic
+    function addHandler(element, event, handler, once) {
+		element.addEventListener(event, handler, { once: once });
+	}
+    const EventHandler = {
+		on(element, event, handler) {
+			addHandler(element, event, handler, false);
+		},
+		one(element, event, handler) {
+			addHandler(element, event, handler, true);
+		},
+	};
+
+    // 함수 내용
+    function headerInit() {
+        const headlimitz = document.querySelector("#header").offsetHeight;
+        console.log('headlimitz : ' + headlimitz);
+
+        EventHandler.on(window, "scroll", () => {
+            if (window.scrollY < headlimitz / 2) {
+                    document.querySelector("#header").classList.remove('red');
+                    return;
+                } else {
+                    document.querySelector("#header").classList.add('red');
+                }
+            });
+    };
+
+    // 실행할 함수
+    window.addEventListener("load", () => {
+		headerInit();
+	});
+
+
+    // function headerInit() {
+    //         const wrap = document.querySelector("#wrap");
+    //         if (getDataAttribute(wrap, "header-interaction") == "false") {
+    //             return;
+    //         }
+    //         let isHide = false,
+    //             startY,
+    //             moveY;
+    //         const header = document.querySelector("#header");
+    //         if (header === null) return;
+    //         const headerHeight = header.offsetHeight;
+    //         const limit = headerHeight;
+
+    //         if (header.classList.contains("no-sticky")) return;
+
+    //         EventHandler.on(window, "touchstart", () => {
+    //             startY = window.scrollY;
+    //         });
+
+    //         EventHandler.on(window, "scroll", () => {
+    //             if (window.scrollY < limit) {
+    //                 startY = window.scrollY;
+    //                 return;
+    //             }
+    //             moveY = startY - window.scrollY;
+    //             if (moveY < 0 && !isHide) {
+    //                 if (Math.abs(moveY) < headerHeight * 2) {
+    //                     headerTranslateY(moveY);
+    //                 } else {
+    //                     headerTranslateY(-headerHeight);
+    //                 }
+    //             } else if (moveY > 0 && isHide) {
+    //                 if (Math.abs(moveY) < headerHeight) {
+    //                     headerTranslateY(-headerHeight + moveY);
+    //                 } else {
+    //                     headerTranslateY(0);
+    //                 }
+    //             }
+    //         });
+
+    //         EventHandler.on(window, "touchend", () => {
+    //             header.classList.toggle("transition");
+    //             if (moveY > 0 || window.scrollY < limit) {
+    //                 headerTranslateY(0);
+    //                 isHide = false;
+    //             } else if (moveY < 0) {
+    //                 headerTranslateY(-headerHeight);
+    //                 isHide = true;
+    //             }
+    //             setTimeout(() => {
+    //                 header.classList.toggle("transition");
+    //             }, 300);
+    //         });
+
+    //         function headerTranslateY(v) {
+    //             header.style.transform = `translateY(${v}px)`;
+    //         }
+    //     }
+
+</script>
+</body>
+</html>
